@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:m="http://ant.apache.org/ivy/maven">
+	<info organisation="${ivy.artifact.group}" module="${ivy.artifact.id}" revision="${project.revision}" />
+
+	<configurations>
+		<conf name="default" />
+		<conf name="test" visibility="private" />
+		<conf name="source" />
+
+		<conf name="runtime" />
+        <conf name="zip" />
+
+	</configurations>
+
+	<publications>
+		<artifact name="${ivy.artifact.id}" type="jar" conf="default" />
+		<artifact name="${package.id}" type="zip" conf="zip" />
+	</publications>
+
+	<dependencies defaultconf="default->default">
+
+		<!-- third party dependencies -->
+
+        <dependency org="org.springframework" name="spring" rev="2.5.6" transitive="false"/>
+
+        <!-- doesn't resolve!
+        <dependency org="org.slf4j" name="slf4j-api" rev="1.7.3" changing="true"
+                    conf="default->default" transitive="false"/>
+        -->
+        
+        <dependency org="pentaho" name="pentaho-platform-api" rev="${dependency.pentaho-platform.revision}" changing="true"
+                    conf="default->default" transitive="false"/>
+        <dependency org="pentaho" name="pentaho-platform-repository" rev="${dependency.pentaho-platform.revision}" changing="true"
+                    conf="default->default" transitive="false"/>
+        <dependency org="pentaho" name="pentaho-platform-core" rev="${dependency.pentaho-platform.revision}" changing="true"
+                    conf="default->default" transitive="false"/>
+        <dependency org="pentaho" name="pentaho-platform-extensions" rev="${dependency.pentaho-platform.revision}" changing="true"
+                    conf="default->default" transitive="false"/>
+        <dependency org="pentaho" name="pentaho-metadata" rev="${dependency.pentaho-metadata.revision}" changing="true" transitive="false" conf="default->default" />
+
+        <dependency org="commons-lang" name="commons-lang" rev="2.4"/>
+
+        <dependency org="javax.ws.rs" name="jsr311-api" rev="1.1.1" transitive="false"/>
+
+        <dependency org="com.sun.jersey" name="jersey-core" rev="1.5" transitive="false"/>
+        <dependency org="com.sun.jersey" name="jersey-json" rev="1.5" transitive="false"/>
+        <dependency org="com.sun.jersey.contribs" name="jersey-spring" rev="1.5" transitive="false"/>
+	</dependencies>
+</ivy-module>
