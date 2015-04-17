@@ -22,7 +22,7 @@
         </constructor-arg>
     </bean>
     -->
-    <bean id="cmt.api" class="org.kynx.pentaho.multen.MultenApi" />
+    <bean id="multen.api" class="org.kynx.pentaho.multen.MultenApi" />
     <bean class="org.kynx.pentaho.multen.jaxb.JAXBContextResolver" />
 </beans>
 

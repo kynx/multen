@@ -7,7 +7,7 @@
   
   See subfloor.xml for more details
 ============================================================================-->
-<project name="${impl.title}" basedir="." default="dist"
+<project name="Multen" basedir="." default="dist"
          xmlns:ivy="antlib:org.apache.ivy.ant">
 
   <description>

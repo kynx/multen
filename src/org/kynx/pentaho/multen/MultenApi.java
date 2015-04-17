@@ -43,7 +43,7 @@ import org.kynx.pentaho.multen.dto.TenantDto;
 /**
  * Service for interacting with tenants
  */
-@Path("/cmt/api")
+@Path("/multen/api")
 public class MultenApi {
   ITenantManager tenantManager;
 
@@ -54,7 +54,7 @@ public class MultenApi {
   @GET
   @Path( "/ping" )
   public String ping() {
-    return "Pong: I was called from CMT";
+    return "Pong: I was called from Multen";
   }
   
   @GET
