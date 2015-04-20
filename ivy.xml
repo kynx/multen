@@ -22,11 +22,8 @@
 		<!-- third party dependencies -->
 
         <dependency org="org.springframework" name="spring" rev="2.5.6" transitive="false"/>
-
-        <!-- doesn't resolve!
-        <dependency org="org.slf4j" name="slf4j-api" rev="1.7.3" changing="true"
-                    conf="default->default" transitive="false"/>
-        -->
+        <dependency org="org.springframework.security" name="spring-security-core" rev="2.0.5.RELEASE" transitive="false"/>    
+        <dependency org="org.slf4j" name="slf4j-log4j12" rev="1.6.1" />
         
         <dependency org="pentaho" name="pentaho-platform-api" rev="${dependency.pentaho-platform.revision}" changing="true"
                     conf="default->default" transitive="false"/>

@@ -12,8 +12,11 @@
     <!-- Register this Spring ApplicationContext with the PentahoSystem. Without this, publishing beans is not possible. -->
     <bean class="org.pentaho.platform.engine.core.system.objfac.spring.ApplicationContextPentahoSystemRegisterer" scope="singleton"/>
 
-    <!-- Enable REST services from this plugin by adding the following -->
+    <!-- Enable REST services from this plugin -->
     <bean id="api" class="org.pentaho.platform.web.servlet.JAXRSPluginServlet"/>
+
+    <!-- Jersey JAXB Context Resolver (fixes 1-element array) -->
+    <bean class="org.pentaho.platform.web.http.api.resources.JAXBContextResolver"/>
 
     <!-- Define our REST service passing in the IAuthorization Policy 
     <bean class="com.pentaho.oem.opsecurity.MyService">
@@ -23,6 +26,9 @@
     </bean>
     -->
     <bean id="multen.api" class="org.kynx.pentaho.multen.MultenApi" />
-    <bean class="org.kynx.pentaho.multen.jaxb.JAXBContextResolver" />
+    <bean class="org.kynx.pentaho.multen.MultenExceptionMapper">
+        <!-- Enables stack trace in JSON response. Set to false in production. -->
+        <property name="debug" value="true"/>
+    </bean>
 </beans>
 
